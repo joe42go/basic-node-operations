@@ -1,0 +1,125 @@
+1)
+  i) Sort: returns the file sorted alphabetically by line
+
+  Joes-MacBook-Pro:basic-node-operations joechung$ sort commands.js
+
+
+
+
+
+
+             done(data);
+             if (err) throw err;
+         const fileName = fullPath[0];
+         fs.readFile(fileName, (err, data) => {
+         });
+      done(userInput);
+     }
+    "cat": function(fullPath) {
+    "echo": function(userInput) {
+    break;
+    break;
+    commandLibrary.cat(userInputArray.slice(1));
+    commandLibrary.echo(userInputArray.slice(1).join(" "));
+    process.stdout.write('\nprompt > ');
+    process.stdout.write(output);
+    },
+   //we will add the functionality of echo next within the object commandLibrary
+  case "cat":
+  case "echo":
+  const command = userInputArray[0];
+  const commandLibrary = {
+  const userInputArray = userInput.split(" ");
+  switch (command) {
+  }
+ //parses the user input to understand which command was typed
+//where we will store our commands
+//where we will store the logic of our commands
+//write out data
+const fs = require("fs");
+function done(output) {
+function evaluateCmd(userInput) {
+module.exports.commandLibrary = commandLibrary;
+module.exports.evaluateCmd = evaluateCmd;
+}
+}
+};
+
+  ii) wc: prints newline, word, and byte counts for a file.
+
+  oes-MacBook-Pro:basic-node-operations joechung$ wc commands.js
+      42     113    1063 commands.js
+
+  iii) uniq:sorts each line in a file and only returns different
+            lines. If there is a line in a file that is the same
+            as a line above it, uniq removes it from the output.
+
+            Joes-MacBook-Pro:basic-node-operations joechung$ uniq commands.js
+            const fs = require("fs");
+
+            //write out data
+            function done(output) {
+                process.stdout.write(output);
+                process.stdout.write('\nprompt > ');
+            }
+
+            //where we will store our commands
+            function evaluateCmd(userInput) {
+             //parses the user input to understand which command was typed
+              const userInputArray = userInput.split(" ");
+              const command = userInputArray[0];
+
+              switch (command) {
+              case "echo":
+               //we will add the functionality of echo next within the object commandLibrary
+                commandLibrary.echo(userInputArray.slice(1).join(" "));
+                break;
+              case "cat":
+                commandLibrary.cat(userInputArray.slice(1));
+                break;
+              }
+            }
+
+            //where we will store the logic of our commands
+              const commandLibrary = {
+
+                "echo": function(userInput) {
+                  done(userInput);
+                },
+                "cat": function(fullPath) {
+                     const fileName = fullPath[0];
+                     fs.readFile(fileName, (err, data) => {
+                         if (err) throw err;
+                         done(data);
+                     });
+                 }
+            };
+
+            module.exports.commandLibrary = commandLibrary;
+            module.exports.evaluateCmd = evaluateCmd;
+
+
+2) Combined 'cat' command with 'wc' command. 'cat' command outputs the content of commands.js and
+   then 'wc' command tallies up the respective count of newlines, words and bytes.
+
+Joes-MacBook-Pro:basic-node-operations joechung$ cat commands.js | wc
+      42     113    1063
+
+
+6)
+
+var sample_string = "I'm learning to program algorithms!"
+
+function reverseString(inputString) {
+   let new_arr = [];
+   let newString = inputString.split(" ");
+   newString.forEach((element) => {
+   		let newElement = element.split("");
+        let reverseElement = newElement.reverse();
+        let result = reverseElement.join("");
+        new_arr.push(result);
+   });
+   return new_arr.join(" ");
+}
+
+console.log(reverseString(sample_string));
