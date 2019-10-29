@@ -54,9 +54,11 @@ function evaluateCmd(userInput) {
            fs.readFile(fileName, (err, data) => {
                let dataString = String(data);
                let dataSplit = dataString.split('\n');
-               let tail = dataSplit.splice(-5);
+               let arrayLength = dataSplit.length - 5;
+               dataSplit.splice(0, arrayLength);
+               let result = dataSplit.join('\n');
                if (err) throw err;
-               done(tail);
+               done(result);
            });
       }
 };
